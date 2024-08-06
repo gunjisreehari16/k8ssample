@@ -9,6 +9,18 @@ spec:
   containers:
   - name: myapp
     image: nginx
+    env:
+    - name: using env confimap
+      valueFrom:
+        configMapKeyRef:
+          name: myconfigmap
+          key: Name
+    - name: using env confimap
+      valueFrom:
+        configMapKeyRef:
+          name: myconfigmap
+          key: FirstName
+
     resources:
       limits:
         memory: "128Mi"
