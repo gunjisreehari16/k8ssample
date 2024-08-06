@@ -10,17 +10,16 @@ spec:
   - name: myapp
     image: nginx
     env:
-    - name: using env confimap
+    - name: CONFIG_NAME
       valueFrom:
         configMapKeyRef:
           name: myconfigmap
           key: Name
-    - name: using env confimap
+    - name: CONFIG_FIRSTNAME
       valueFrom:
         configMapKeyRef:
           name: myconfigmap
           key: FirstName
-
     resources:
       limits:
         memory: "128Mi"
