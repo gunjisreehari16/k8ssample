@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: myconfigmap
+  namespace: dev
 data:
   Name: sreehari
   FirstName: Gunji
