@@ -9,17 +9,10 @@ spec:
   containers:
   - name: myapp
     image: nginx
-    env:
-    - name: CONFIG_NAME
-      valueFrom:
-        configMapKeyRef:
-          name: myconfigmap
-          key: Name
-    - name: CONFIG_FIRSTNAME
-      valueFrom:
-        configMapKeyRef:
-          name: myconfigmap
-          key: FirstName
+    envFrom:
+    - configMapKeyRef:
+        name: myconfigmap
+
     resources:
       limits:
         memory: "128Mi"
