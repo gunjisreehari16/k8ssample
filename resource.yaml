@@ -10,9 +10,8 @@ spec:
   - name: myapp
     image: nginx
     envFrom:
-    - configMapKeyRef:
+    - configMapRef:
         name: myconfigmap
-
     resources:
       limits:
         memory: "128Mi"
